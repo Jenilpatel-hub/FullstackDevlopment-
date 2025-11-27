@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer Form</title>
+</head>
+<body>
+  <form action="#" method="post">
+    <fieldset>
+      <legend>Customer</legend>
+
+      <table>
+        <tr>
+          <td><label for="name">Name<span title="required">*</span></label></td>
+          <td><input type="text" id="name" name="name" required /></td>
+        </tr>
+
+        <tr>
+          <td><label for="email">Email<span title="required">*</span></label></td>
+          <td><input type="email" id="email" name="email" required /></td>
+        </tr>
+
+        <tr>
+          <td><label for="investment">Investment</label></td>
+          <td>
+            <select id="investment" name="investment">
+              <option value="">-- Select --</option>
+              <option>Stocks</option>
+              <option>Bonds</option>
+              <option>Mutual Fund</option>
+              <option>Real Estate</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="dateJoined">Date Joined<span title="required">*</span></label></td>
+          <td><input type="date" id="dateJoined" name="dateJoined" required /></td>
+        </tr>
+
+        <tr>
+          <td><label for="active">Active</label></td>
+          <td><input type="checkbox" id="active" name="active" /></td>
+        </tr>
+
+         <tr>
+          <td></td>
+          <td>
+            <button type="submit">OK</button>
+            <button type="reset">Cancel</button>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+    
+  </form>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0%;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            background-color: aqua;
+            color: aqua;
+            padding: 15px;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            color: pink;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: rgb(9, 9, 9);
+            padding: 10px 10px;
+            font-size: 20px;
+        }
+        .section-content {
+            border: 2px solid;
+            display: flex;
+            justify-content: space-around;
+            gap: 5px;
+            padding: 20px;
+            text-align: center;
+
+        }
+
+        .content-1,
+        .content-2 {
+            background-color: pink;
+            padding: 16px;
+            border-radius: 5px;
+        }
+
+        .content-1 h1,
+        .content-2 h1 {
+            font-size: clamp(10px, 5vw, 80px);
+        }
+
+        .content-1 p,
+        .content-2 p {
+            font-size: clamp(7px, 2vw, 20px);
+        }
+        .footer {
+         padding: 30px;
+         background-color: black;
+         color: white;
+         bottom: 0;
+         width: 100%;
+         position: fixed;
+         text-align: center;
+      }
+        @media only screen and (max-width:576px) {
+            .section-content {
+                flex-direction: column;
+                justify-content: left;
+            }
+
+            .navbar ul {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Service</a></li>
+                <li><a href="">Help</a></li>
+            </ul>
+        </nav>
+    </div>
+   <!-- Section Part -->
+   <section class="section-content">
+      <div class="content-1">
+         <h1>Computer Application</h1>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div class="content-2">
+         <h1>Software Developer</h1>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+   </section>
+   <footer class="footer">
+      <p>&copy; 2025 Your Company. All rights reserved.</p>
+   </footer>
+</body>
+
+</html>

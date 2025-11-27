@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <table border="10" cellpadding="15">
+        <thead>
+            <tr>
+                <th>id</th>
+                
+                <th>title</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>total</th>
+                <th>discountPercentage</th>
+                <th>discountedTotal</th>
+                <th>thumbnail</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+
+
+
+
+    <script>
+        fetch("https://dummyjson.com/carts", {
+            method: "GET"
+        })
+            .then((res) => {
+                return res.json()
+            })
+            .then((data) => {
+                console.log(data.carts)
+                data.carts.forEach((user, index) => {
+
+
+                    console.log(user.carts)
+                    let tbody = document.querySelector("tbody")
+                    let trow = tbody.insertRow();
+
+                    let idcell = trow.insertCell(0)
+                   
+                    let titlecell = trow.insertCell(1)
+                    let pricecell = trow.insertCell(2)
+                    let quantitycell = trow.insertCell(3)
+                    let totalcell = trow.insertCell(4)
+                    let discountPercentagecell = trow.insertCell(5)
+                    let discountedTotalcell = trow.insertCell(6)
+                    let thumbnailcell = trow.insertCell(7)
+
+
+                    idcell.textContent = user. id
+                   
+                    titlecell.textContent = user.title
+                    pricecell.textContent = user.  price
+                    quantitycell.textContent = user.  quantity
+                    totalcell.textContent = user.total
+                    discountPercentagecell.textContent = user.discountPercentage
+                    discountedTotalcell.textContent = user.discountedTotal
+                    thumbnailcell.textContent = user.thumbnail
+
+
+                });
+            })
+    </script>
+</body>
+
+</html>

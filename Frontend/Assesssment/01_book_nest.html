@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <h2> <b>BookNest Reservation Form</b></h2>
+
+        <form>
+            <div class="form">
+                <label class="form-label">Full Name:</label>
+                <input type="text" class="form-control" placeholder="Enter your full name" required>
+                <div class="invalid - feedback">Please enter your full name</div>
+            </div>
+
+
+            <div class="form">
+                <label class="form-label">Email:</label>
+                <input type="Email" class="form-control" placeholder="example@email.com" required>
+                <div class="invalid - feedback">Please enter a valid email</div>
+            </div>
+
+            <div class="form">
+                <label class="form-label">Phone number:</label>
+                <input type="Phone" class="form-control" placeholder="10-digit number" maxlength="10" required>
+                <div class="invalid - feedback">Phone must be exactly 10 digits</div>
+            </div>
+
+            <div class="form">
+                <label class="form-label">Book title:</label>
+                <input type="Booktitle" class="form-control" placeholder="Enter book title" required>
+                <div class="invalid - feedback">Book title is required</div>
+            </div>
+
+            <div class="form">
+                <label class="form-label">Author name:</label>
+                <input type="Author name" class="form-control" placeholder="Enter Author name" required>
+                <div class="invalid - feedback">Author name is required</div>
+            </div>
+
+
+            <div class="form">
+                <label class="form-label">Pickup date:</label>
+                <input type="date" class="form-control" id="pickup date" required>
+                <div class="invalid - feedback">Please select a pickup date</div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-primary">reset</button>
+
+        </form>
+    </div>
+
+    <script>
+
+        let name_tag = document.getElementById("name")
+        let nameerr = document.getElementById("nameerr")
+
+        let phone = document.getElementById("phone")
+        let phoneerr = document.getElementById("phoneerr")
+
+        let email = document.getElementById("email")
+        let Emailerr = document.getElementById("Emailerr")
+
+        let book = document.getElementById("book")
+        let bookerr = document.getElementById("bookerr")
+
+        let Author = document.getElementById("Author")
+        let Authorerr = document.getElementById("Authorerr")
+
+        let Pickup = document.getElementById("Pickup")
+        let Pickuperr = document.getElementById("Pickuperr")
+
+
+        function validation() {
+            if (name_tag.value == "" || name_tag.value == null) {
+                nameerr.innerHTML = "Full Name Required..."
+                nameerr.style.color = "red"
+                return false
+            }
+            else {
+                nameerr.innerHTML = ""
+            }
+
+            if (phone.value == "" || phone.value == null) {
+                phoneerr.innerHTML = "Phone Number Required..."
+                phoneerr.style.color = "red"
+                return false
+            }
+            else {
+                phoneerr.innerHTML = ""
+            }
+
+            if (email.value == "" || email.value == null) {
+                Emailerr.innerHTML = "Email required..."
+                Emailerr.style.color = "red"
+                return false
+            }
+            else {
+                Emailerr.innerHTML = ""
+            }
+
+            if (bookerr.value == "" || book.value == null) {
+                bookerr.innerHTML = "Vehicle Details Required..."
+                bookerr.style.color = "red"
+                return false
+            }
+            else {
+                bookerr.innerHTML = ""
+            }
+
+            if (Authorerr.value == "" || Author.value == null) {
+                Authorerr.innerHTML = "Please fill the information..."
+                Authorerr.style.color = "red"
+                return false
+            }
+            else {
+                compdes.innerHTML = ""
+            }
+
+
+            if (Pickuperr.value == "" || Pickup.value == null) {
+                Pickuperr.innerHTML = "Please fill the information..."
+                Pickuperr.style.color = "red"
+                return false
+            }
+            else {
+                compdes.innerHTML = ""
+            }
+        }
+    </script>
+
+</body>
+
+</html>

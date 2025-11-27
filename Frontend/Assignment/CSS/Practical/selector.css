@@ -1,0 +1,14 @@
+.main{
+    background-color: lightcoral;
+    width: 40%;
+    border: 2px solid;
+    padding: 30px 40px;
+    margin: 0px auto;
+}
+#submit{
+   transform: scale(1);
+   transition: .5s;
+}
+#submit:hover{
+    transform: scale(1.1);
+}
