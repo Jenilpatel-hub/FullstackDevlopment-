@@ -17,6 +17,8 @@ import Practical_9_1 from './Practical/Practical_9_1'
 import Practical_10 from './Practical/Practical_10'
 import Practical_10_1 from './Practical/Practical_10_1'
 import Practical_10_2 from './Practical/Practical_10_2'
+import Contact from './Pages/Contact'
+import Home from './Pages/Home'
 
 
 
@@ -56,7 +58,9 @@ function App() {
 
       {/* <BrowserRouter>
       <Router>
-        <Route path='/' element={<About />} />
+        <Route path='/About' element={<About />} />
+        <Route path='/Contact' element={<Contact />} />
+         <Route path='/' element={<Home />} />
       </Router>
       </BrowserRouter>
       */}
