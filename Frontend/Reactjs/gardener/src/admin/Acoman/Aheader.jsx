@@ -1,7 +1,24 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 function Aheader() {
+
+    const redirect = useNavigate()
+
+    useEffect(() => {
+        if (!localStorage.getItem("Aid")) {
+            redirect("/Alogin")
+        }
+    }, [redirect])
+
+    const logout = () => {
+        localStorage.removeItem("Aid")
+        localStorage.removeItem("Aname")
+        toast.success("Successfully logout")
+        redirect("/Alogin")
+    }
+
     return (
         <div>
             <div>
@@ -21,10 +38,10 @@ function Aheader() {
                         <div className="col-lg-5 px-5 text-end">
                             <div className="h-100 d-inline-flex align-items-center mx-n2">
                                 <span>Follow Us:</span>
-                                <a className="btn btn-link text-light" href><i className="fab fa-facebook-f" /></a>
+                                {/* <a className="btn btn-link text-light" href><i className="fab fa-facebook-f" /></a>
                                 <a className="btn btn-link text-light" href><i className="fab fa-twitter" /></a>
                                 <a className="btn btn-link text-light" href><i className="fab fa-linkedin-in" /></a>
-                                <a className="btn btn-link text-light" href><i className="fab fa-instagram" /></a>
+                                <a className="btn btn-link text-light" href><i className="fab fa-instagram" /></a> */}
                             </div>
                         </div>
                     </div>
@@ -41,9 +58,25 @@ function Aheader() {
 
                     <div className="collapse navbar-collapse" id="navbarCollapse">
                         <div className="navbar-nav ms-auto p-4 p-lg-0">
-                            <NavLink to="/" className="nav-item nav-link">Home</NavLink>
+
+                            <div className='nav-item-dropdown'>
+                                <a href='#' className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Service</a>
+                                <div className="dropdown-menu bg-light m-0">
+                                    <NavLink to="/Servicemanage" className="dropdown-item">Servicemanage</NavLink>
+                                    <NavLink to="/Serviceadd" className="dropdown-item">Service Add</NavLink>
+                                </div>
+                            </div>
+                            <div className='nav-item-dropdown'>
+                                <a href='#' className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Team</a>
+                                <div className="dropdown-menu bg-light m-0">
+                                    <NavLink to="/Teammanage" className="dropdown-item">Teammanage</NavLink>
+                                    <NavLink to="/Teamadd" className="dropdown-item">Team Add</NavLink>
+                                </div>
+                            </div>
+
+                            {/* <NavLink to="/" className="nav-item nav-link">Home</NavLink>
                             <NavLink to="/About" className="nav-item nav-link">About</NavLink>
-                            <NavLink to="/Service" className="nav-item nav-link">Services</NavLink>
+                            <NavLink to="/Service" className="nav-item nav-link">Services</NavLink> */}
                             <NavLink to="/Projects" className="nav-item nav-link">Projects</NavLink>
                             <div className="nav-item dropdown">
                                 <a href="#" className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -55,9 +88,35 @@ function Aheader() {
 
                                 </div>
                             </div>
-                            <NavLink to="Contact" className="nav-item nav-link">Contact</NavLink>
+
+                            {/* login & logot function */}
+                            {
+                                (() => {
+                                    if (localStorage.getItem("Aid")) {
+                                        return (
+                                            <Link className="nav-item nav-link"> hello.{localStorage.getItem("Aname")}</Link>
+                                        )
+                                    }
+                                    return null
+                                })()
+                            }
+
+                            {
+                                (() => {
+                                    if (localStorage.getItem("Aid")) {
+                                        return (
+                                            <Link onClick={logout} className="nav-item nav-link">Alogout</Link>
+                                        )
+                                    } else {
+                                        return (
+                                            <Link to="/Alogin" className="nav-item nav-link">Alogin</Link>
+                                        )
+                                    }
+                                })()
+                            }
+
                         </div>
-                        <a href className="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote<i className="fa fa-arrow-right ms-3" /></a>
+                        {/* <a href className="btn btn-primary py-4 px-lg-4 rounded-0 d-none d-lg-block">Get A Quote<i className="fa fa-arrow-right ms-3" /></a> */}
                     </div>
                 </nav>
                 {/* Navbar End */}

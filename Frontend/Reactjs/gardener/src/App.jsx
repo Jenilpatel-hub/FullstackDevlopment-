@@ -11,37 +11,69 @@ import Testimonial from './website/Pages/Testimonial'
 import Notfound from './website/Pages/Notfound'
 import Contact from './website/Pages/Contact'
 import Dashbord from './admin/Apages/Dashbord'
+import Servicemanage from './admin/Apages/Servicemanage'
+import ServiceAdd from './admin/Apages/ServiceAdd'
+import Teammanage from './admin/Apages/Teammanage'
+import TeamAdd from './admin/Apages/TeamAdd'
+import { Bounce, ToastContainer } from 'react-toastify'
+import Alogin from './admin/Apages/Alogin'
+
+
 
 
 function App() {
   return (
     <BrowserRouter>
-    <div>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/About' element={<About />}/>
-         <Route path='/Service' element={<Service />}/>
-         <Route path='/Projects' element={<Projects />}/>
-          <Route path='/Feature' element={<Feature />}/>
-          <Route path='/Quote' element={<Quota />}/>
-          <Route path='/Team' element={<Team />}/>
-          <Route path='/Testimonial' element={<Testimonial />}/>
-          <Route path='*' element={<Notfound />}/>
-          <Route path='/Contact' element={<Contact />}/>
+
+      {/* tostify */}
+
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
+      <div>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/About' element={<About />} />
+          <Route path='/Service' element={<Service />} />
+          <Route path='/Projects' element={<Projects />} />
+          <Route path='/Feature' element={<Feature />} />
+          <Route path='/Quote' element={<Quota />} />
+          <Route path='/Team' element={<Team />} />
+          <Route path='/Testimonial' element={<Testimonial />} />
+          <Route path='*' element={<Notfound />} />
+          <Route path='/Contact' element={<Contact />} />
 
           {/* Admin */}
           <Route path='/Dashboard' element={<Dashbord />} />
-          
-          
-          
-          
-        
-      </Routes>
-    
-      
-    </div>
+          <Route path='/Servicemanage' element={<Servicemanage />} />
+          <Route path='/Serviceadd' element={<ServiceAdd />} />
+          <Route path='/Teammanage' element={<Teammanage />} />
+          <Route path='/Teamadd' element={<TeamAdd />} />
+          <Route path='/alogin' element={<Alogin />} />
+
+
+
+
+
+
+
+
+        </Routes>
+
+
+      </div>
     </BrowserRouter>
-   
+
   )
 }
 
